@@ -1,0 +1,75 @@
+body {
+    background: #f0f0f0;
+    margin: 0;
+    height: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    z-index: 1;
+}
+
+.coverflow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.coverflow-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    transition: transform 1s ease, opacity 1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.coverflow-slide:nth-child(1) {
+    background-image: url('NB.png');
+}
+
+.coverflow-slide:nth-child(2) {
+    background-image: url('conv.jpg ');
+}
+
+.coverflow-slide:nth-child(3) {
+    background-image: url('logo2.png');
+}
+
+.coverflow-slide:nth-child(4) {
+    background-image: url('images/nike.jpg');
+}
+
+.coverflow-slide:nth-child(5) {
+    background-image: url('images/image5.jpg');
+}
+
+.coverflow-slide:nth-child(6) {
+    background-image: url('images/image6.jpg');
+}
+
+.coverflow-slide {
+    opacity: 0;
+}
+
+.coverflow-slide.active {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+}
+
+.coverflow-slide.left {
+    transform: translateX(-300px) scale(0.8);
+    opacity: 0.5;
+}
+
+.coverflow-slide.right {
+    transform: translateX(300px) scale(0.8);
+    opacity: 0.5;
+}
